@@ -37,8 +37,13 @@ const http = require('http'); // for working with http
 //////////////////////////
 // SERVER
 
-http.createServer(function (req, res) {
+// Creating a server instance
+const server = http.createServer(function (req, res) {
     console.log(req.url);
     res.writeHead(200, { 'Content-Type': 'text/html' });
-    res.end('Hello World!');
-}
+    res.end('Hello World! from server');
+});
+
+server.listen(8000, '127.0.0.1', () => {
+    console.log('Listening to requests on port 8000');
+} ); // port number and local host
