@@ -39,7 +39,7 @@ const http = require('http'); // for working with http
 
 // Creating a server instance
 const server = http.createServer(function (req, res) {
-    console.log(req.url);
+    console.log(req);
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end('Hello World! from server');
 });
